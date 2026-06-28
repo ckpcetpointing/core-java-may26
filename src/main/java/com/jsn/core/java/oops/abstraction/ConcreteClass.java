@@ -7,7 +7,7 @@ public class ConcreteClass extends AbstractClass {
     }
 
     @Override
-    void abstractMethod() {
+    public void abstractMethod() {
         System.out.println("Implementation of the abstract method in the concrete class.");
     }
 }
