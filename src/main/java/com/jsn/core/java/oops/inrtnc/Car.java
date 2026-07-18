@@ -2,10 +2,14 @@ package com.jsn.core.java.oops.inrtnc;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
-public class Car {
+@ToString
+public class Car implements Serializable {
 
     String id;
     String color;

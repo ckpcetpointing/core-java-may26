@@ -2,10 +2,11 @@ package com.jsn.core.java.oops.inrtnc;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class BMWCar extends Car {
+public class BMWCar extends Car{
 
     String display;
     String charging;
@@ -17,5 +18,10 @@ public class BMWCar extends Car {
 
     void startDisplay() {
         System.out.println("BMW Car is starting the display...");
+    }
+
+    @Override
+    public String toString() {
+        return "BMWCar-ID:"+this.getId();
     }
 }

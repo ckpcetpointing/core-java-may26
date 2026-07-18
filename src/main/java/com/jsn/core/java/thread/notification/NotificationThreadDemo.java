@@ -2,7 +2,7 @@ package com.jsn.core.java.thread.notification;
 
 public class NotificationThreadDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         long startTime = System.currentTimeMillis();
@@ -13,11 +13,17 @@ public class NotificationThreadDemo {
 
         EmailTask emailTask = new EmailTask();
         Thread emailThread = new Thread(emailTask);
+        emailThread.setName("Email Thread-0");
         emailThread.start();
 
+        System.out.println("****Email Thread is started, now main thread will wait for emailThread to complete its execution before moving forward");
+        System.out.println(Thread.currentThread().getName() + " is waiting for emailThread to complete its execution");
+        System.out.println("****Email Thread is completed, now main thread will start SMS Thread");
         SmsTask smsTask = new SmsTask();
         Thread smsThread = new Thread(smsTask);
         smsThread.start();
+
+        smsThread.interrupt();// useful to stop the thread execution if it is in sleep or wait state
 
         while (emailThread.isAlive()  | smsThread.isAlive()){
             continue;

@@ -17,11 +17,21 @@
   </properties>
 
   <dependencies>
+
+    <!-- LOMBOK dependency for JDK21 -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.42</version>
     </dependency>
+    <!-- Apache commons-lang3 dependency for JDK21 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.13.0</version>
+    </dependency>
+
+
     <!-- provide junit dependency for testing for JDK21\  -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
